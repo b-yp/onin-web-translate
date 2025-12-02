@@ -1,0 +1,11 @@
+{
+  "id": "com.web-translate.20251202",
+  "name": "Web Translate",
+  "version": "0.0.1",
+  "description": "翻译插件",
+  "entry": "dist/index.html",
+  "devMode": true,
+  "devServer": "http://localhost:5173",
+  "type": "webview",
+  "commands": []
+}
