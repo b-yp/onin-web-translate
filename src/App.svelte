@@ -6,6 +6,7 @@
   let urlMaps = $state({
     sougou: `https://fanyi.sogou.com`,
     baidu: `https://fanyi.baidu.com`,
+    bing: `https://cn.bing.com/translator`,
     youdao: `https://fanyi.youdao.com`,
   });
 
@@ -28,6 +29,8 @@
   $effect(() => {
     urlMaps.sougou = `https://fanyi.sogou.com/text?keyword=${encodeURIComponent(text)}&transfrom=auto&transto=zh-CHS&model=general`;
     urlMaps.baidu = `https://fanyi.baidu.com/mtpe-individual/transText?query=${encodeURIComponent(text)}&lang=auto2zh`;
+    // Bing 翻译支持 URL 参数传递文本
+    urlMaps.bing = `https://cn.bing.com/translator?text=${encodeURIComponent(text)}&mkt=zh-CN`;
     // 有道翻译不支持通过URL参数自动填入文本，因此只能打开翻译页面
     urlMaps.youdao = `https://fanyi.youdao.com/#/TextTranslate`;
   });
@@ -90,6 +93,30 @@
     </label>
     <div class="tab-content bg-base-100 border-base-300">
       <iframe title="百度翻译" class="w-full h-full" src={urlMaps["baidu"]}
+      ></iframe>
+    </div>
+
+    <label class="tab">
+      <input type="radio" name="my_tabs_4" />
+      <svg
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        ><path
+          d="M340.5824 70.109867L102.536533 0.682667v851.217066L340.650667 643.345067V70.109867zM102.536533 851.7632l238.045867 171.6224 580.881067-340.923733V411.784533L102.536533 851.831467z"
+          fill="#409EFF"
+        ></path><path
+          d="M409.463467 255.3856l113.732266 238.933333 138.8544 56.866134 259.413334-139.400534-506.0608-156.330666z"
+          fill="#409EFF"
+        ></path></svg
+      >
+      <span class="ml-2"> Bing 翻译 </span>
+    </label>
+    <div class="tab-content bg-base-100 border-base-300">
+      <iframe title="Bing翻译" class="w-full h-full" src={urlMaps["bing"]}
       ></iframe>
     </div>
 
