@@ -1,6 +1,7 @@
 {
-  "id": "com.web-translate.20251202",
+  "id": "byper.web-translate.onin",
   "name": "Web Translate",
+  "icon": "icon.svg",
   "version": "0.0.1",
   "description": "翻译插件",
   "entry": "dist/index.html",
